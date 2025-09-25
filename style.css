@@ -17,7 +17,7 @@ body{
   'cabecalho cabecalho'
   'capa-imagem capa-conteudo'
   'projetos projetos'
-  /* 'contatos contatos' */
+  'contatos contatos'
   ;
   column-gap: 20px;
   row-gap: 50px;
@@ -248,43 +248,63 @@ section#capa-conteudo p{
 /* ================================== */
 /* RESPONSIVIDADE */
 /* ================================== */
-@media(max-width:768px) {
-    .container{
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
     grid-template-columns: 1fr;
     grid-template-areas:   
-    'cabecalho'
-    'capa-imagem'
-    'capa-conteudo capa-conteudo'
-    'projetos'
-    'contatos contatos'
-    ;
+      'cabecalho'
+      'capa-imagem'
+      'capa-conteudo capa-conteudo'
+      'projetos'
+      'contatos contatos';
   }
 
-  .container-projetos{
+  header{
+    display: block;
+  }
+  nav ul{
+    justify-content: center;
+    flex-direction: row
+  }
+
+  .container-projetos {
     display: flex;
     flex-direction: row;
-
   }
 
-  section#capa-conteudo h1{
+  section#capa-conteudo h1 {
+    padding-top: 30px;
     text-align: center;
   }
 
-  section#capa-conteudo p{
-    margin: 0 30px;
-    width: 700px;
-   
+  section#capa-conteudo p {
+    margin: 40px;
+    width: 80%;
   }
 
-  section#contatos{
-    width: 800px;
+  section#projetos h2{
+    width:80%;
+    margin-left: 10%
+
+}
+
+.container-projetos {
+  display:block;
+}
+.container-projetos > div {
+   width: 80%
+}
+
+  section#contatos {
+    width: 95%;
   }
 
-  section#contatos h1{
-    font-size: 0.5rem
+  section#contatos h1 {
+    font-size: 0.5rem;
   }
 
-  footer p{
-    text-align:center
+  footer p {
+    text-align: center;
   }
 }
