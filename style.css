@@ -1,0 +1,290 @@
+
+/* ================================== */
+/* ESTRUTURA */
+/* ================================== */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fffdfd;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:   
+  'cabecalho cabecalho'
+  'capa-imagem capa-conteudo'
+  'projetos projetos'
+  /* 'contatos contatos' */
+  ;
+  column-gap: 20px;
+  row-gap: 50px;
+}
+
+header{
+  grid-area: cabecalho;
+  display: flex;
+  align-items: center;
+  margin: 1.3rem;
+}
+
+nav{
+    flex-grow: 1;
+}
+
+
+nav ul{
+  list-style-type: none;
+  display: flex;  
+  justify-content: flex-end;
+}
+
+
+header a:link, header a:visited, nav ul a:link, nav ul a:visited{
+  padding: 0.8rem;
+  text-decoration: none;
+  color: #696969;
+}
+
+nav ul a:hover{
+  color: #338EE3;
+}
+
+section#capa-imagem{
+   grid-area: capa-imagem;
+   align-self: center;
+   justify-self: center;
+   padding-top: 100px;
+}
+section#capa-imagem img{
+  width: 100%;
+  height: 100%;
+}
+
+section#capa-conteudo{
+   grid-area: capa-conteudo;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+section#capa-conteudo h1{
+  color: #302D2D;
+  margin-bottom: 0;
+}
+section#capa-conteudo h1 span{
+  color: #338EE3;
+}
+section#capa-conteudo p{
+  color: #868588;
+  line-height: 1.5;
+  /* width: 555px; */
+}
+
+section#projetos{
+  grid-area: projetos;
+  margin-top: 100px;
+}
+
+section#projetos h2{
+  color: #696969;
+}
+
+.container-projetos{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+}
+
+.container-projetos > div{
+  background-color: #ffffff;
+  margin: 1rem;
+  padding: 1.8rem;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.container-projetos > div:hover{
+  transform: translatey(-10px)
+}
+
+.container-projetos div > img{
+  border-radius: 20px;
+}
+
+/* .container-projetos div > img:hover{
+  border: 5px solid #338EE3;
+} */
+
+
+.container-projetos div p{
+  margin-top: 0.5rem;
+  color: #adadadff;
+  margin: 0;
+}
+
+.container-projetos div a img{
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 10px;
+}
+
+.icons{
+  margin-top: 0.8rem
+}
+   
+section#contatos{
+   grid-area: contatos;
+   padding: 4%;
+   margin-top: 5%;
+   background-color: #338EE3;
+}
+
+section#contatos h2{
+  margin: 0;
+  color: #ffffff;
+}
+section#contatos p{
+  margin-top: 5px;
+  color: #AAD2F8;
+}
+
+section#contatos div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section#contatos a{
+  padding: 0 8px;
+}
+
+section#contatos, footer{
+  text-align: center;
+}
+
+footer{
+  padding: 2%;
+  color: #7C7B7B;
+}
+
+
+/* ================================== */
+/* TIPOGRAFIA */
+/* ================================== */
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+header{
+  text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+h1{
+  font-size: 96px;
+  text-align: left;
+  font-weight:600;
+}
+
+h2{
+  text-align: center;
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+section#projetos h2{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+h3{
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+p{
+  letter-spacing: 1px;
+}
+
+
+section#contatos h2{
+  letter-spacing: 1px;
+}
+
+
+section#contatos p{
+  font-size: 24px;
+}
+
+section#capa-conteudo p{
+  text-align: justify;
+  font-size: 20px;
+}
+
+.container-projetos p{
+  font-size: 18px;
+
+}
+
+/* ================================== */
+/* RESPONSIVIDADE */
+/* ================================== */
+@media(max-width:768px) {
+    .container{
+    grid-template-columns: 1fr;
+    grid-template-areas:   
+    'cabecalho'
+    'capa-imagem'
+    'capa-conteudo capa-conteudo'
+    'projetos'
+    'contatos contatos'
+    ;
+  }
+
+  .container-projetos{
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  section#capa-conteudo h1{
+    text-align: center;
+  }
+
+  section#capa-conteudo p{
+    margin: 0 30px;
+    width: 700px;
+   
+  }
+
+  section#contatos{
+    width: 800px;
+  }
+
+  section#contatos h1{
+    font-size: 0.5rem
+  }
+
+  footer p{
+    text-align:center
+  }
+}
